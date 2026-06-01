@@ -59,10 +59,10 @@ export function GameplayPulsepuckLite({ actions, runtime }: GameplayPulsepuckLit
       </div>
       </div>
       <div className="absolute top-margin-compact right-margin-compact z-20 flex gap-gutter">
-      <button className="hud-panel px-panel-padding py-2 rounded flex items-center gap-2 hover:bg-white/10 transition-colors" title="Pause Game [P]" type="button" data-action-id="pause-game-p-1" onClick={actions?.["pause-game-p-1"]}>
+      <button className="hud-panel px-panel-padding py-2 rounded flex items-center gap-2 hover:bg-white/10 transition-colors" aria-label="Pause Game [P]" title="Pause Game [P]" type="button" data-action-id="pause-game-p-1" onClick={actions?.["pause-game-p-1"]}>
       <Pause className="text-outline" aria-hidden={true} focusable="false" />
       </button>
-      <button className="hud-panel px-panel-padding py-2 rounded flex items-center gap-2 hover:bg-white/10 transition-colors" title="Settings" type="button" data-action-id="settings-2" onClick={actions?.["settings-2"]}>
+      <button className="hud-panel px-panel-padding py-2 rounded flex items-center gap-2 hover:bg-white/10 transition-colors" aria-label="Settings" title="Settings" type="button" data-action-id="settings-2" onClick={actions?.["settings-2"]}>
       <Settings className="text-outline" aria-hidden={true} focusable="false" />
       </button>
       </div>

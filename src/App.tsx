@@ -109,7 +109,7 @@ export default function App() {
   }, [screen.activeScreen, screen.gameOver, screen.runtime.paused, screen.started]);
 
   return (
-    <div data-setfarm-root="pulsepuck-lite" data-testid="setfarm-app-root">
+    <div className="min-h-dvh flex" data-setfarm-root="pulsepuck-lite" data-testid="setfarm-app-root">
       <AppScreen screen={screen} />
     </div>
   );
