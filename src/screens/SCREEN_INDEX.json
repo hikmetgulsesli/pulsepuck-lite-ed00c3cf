@@ -1,0 +1,120 @@
+[
+  {
+    "screenId": "1568d9d021fb46afa4d0a4b03c5cdbcb",
+    "title": "Gameplay - PulsePuck Lite",
+    "componentName": "GameplayPulsepuckLite",
+    "file": "src/screens/GameplayPulsepuckLite.tsx",
+    "buttons": 5,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "pause-game-p-1",
+        "kind": "button",
+        "label": "Pause Game [P]",
+        "index": 0
+      },
+      {
+        "id": "settings-2",
+        "kind": "button",
+        "label": "Settings",
+        "index": 1
+      },
+      {
+        "id": "start-game-3",
+        "kind": "button",
+        "label": "START GAME",
+        "index": 2
+      },
+      {
+        "id": "restart-4",
+        "kind": "button",
+        "label": "RESTART",
+        "index": 3
+      },
+      {
+        "id": "resume-5",
+        "kind": "button",
+        "label": "RESUME",
+        "index": 4
+      }
+    ]
+  },
+  {
+    "screenId": "5a7ac3769a864d5894550b0dad8ba4c5",
+    "title": "Game Settings - PulsePuck Lite",
+    "componentName": "GameSettingsPulsepuckLite",
+    "file": "src/screens/GameSettingsPulsepuckLite.tsx",
+    "buttons": 11,
+    "inputs": 1,
+    "links": 0,
+    "actions": [
+      {
+        "id": "settings-1",
+        "kind": "button",
+        "label": "Settings",
+        "index": 0
+      },
+      {
+        "id": "pause-2",
+        "kind": "button",
+        "label": "Pause",
+        "index": 1
+      },
+      {
+        "id": "on-3",
+        "kind": "button",
+        "label": "ON",
+        "index": 2
+      },
+      {
+        "id": "off-4",
+        "kind": "button",
+        "label": "OFF",
+        "index": 3
+      },
+      {
+        "id": "on-5",
+        "kind": "button",
+        "label": "ON",
+        "index": 4
+      },
+      {
+        "id": "off-6",
+        "kind": "button",
+        "label": "OFF",
+        "index": 5
+      },
+      {
+        "id": "easy-7",
+        "kind": "button",
+        "label": "EASY",
+        "index": 6
+      },
+      {
+        "id": "normal-8",
+        "kind": "button",
+        "label": "NORMAL",
+        "index": 7
+      },
+      {
+        "id": "hard-9",
+        "kind": "button",
+        "label": "HARD",
+        "index": 8
+      },
+      {
+        "id": "return-to-gameplay-10",
+        "kind": "button",
+        "label": "RETURN TO GAMEPLAY",
+        "index": 9
+      },
+      {
+        "id": "save-preferences-11",
+        "kind": "button",
+        "label": "SAVE PREFERENCES",
+        "index": 10
+      }
+    ]
+  }
+]
