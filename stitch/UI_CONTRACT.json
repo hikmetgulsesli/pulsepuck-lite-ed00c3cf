@@ -1,0 +1,205 @@
+[
+  {
+    "screenId": "1568d9d021fb46afa4d0a4b03c5cdbcb",
+    "screenTitle": "Gameplay - PulsePuck Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "Pause Game [P]",
+        "line": 176
+      },
+      {
+        "type": "button",
+        "label": "Settings",
+        "line": 179
+      },
+      {
+        "type": "button",
+        "label": "START GAME",
+        "line": 205
+      },
+      {
+        "type": "button",
+        "label": "RESTART",
+        "line": 208
+      },
+      {
+        "type": "button",
+        "label": "RESUME",
+        "line": 217
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Pause Game [P]",
+        "line": 176
+      },
+      {
+        "type": "button",
+        "label": "Settings",
+        "line": 179
+      },
+      {
+        "type": "button",
+        "label": "START GAME",
+        "line": 205
+      },
+      {
+        "type": "button",
+        "label": "RESTART",
+        "line": 208
+      },
+      {
+        "type": "button",
+        "label": "RESUME",
+        "line": 217
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 5,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "5a7ac3769a864d5894550b0dad8ba4c5",
+    "screenTitle": "Game Settings - PulsePuck Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "Settings",
+        "line": 141
+      },
+      {
+        "type": "button",
+        "label": "Pause",
+        "line": 145
+      },
+      {
+        "type": "button",
+        "label": "ON",
+        "line": 179
+      },
+      {
+        "type": "button",
+        "label": "OFF",
+        "line": 180
+      },
+      {
+        "type": "button",
+        "label": "ON",
+        "line": 186
+      },
+      {
+        "type": "button",
+        "label": "OFF",
+        "line": 187
+      },
+      {
+        "type": "button",
+        "label": "EASY",
+        "line": 202
+      },
+      {
+        "type": "button",
+        "label": "NORMAL",
+        "line": 203
+      },
+      {
+        "type": "button",
+        "label": "HARD",
+        "line": 204
+      },
+      {
+        "type": "button",
+        "label": "RETURN TO GAMEPLAY",
+        "line": 253
+      },
+      {
+        "type": "button",
+        "label": "SAVE PREFERENCES",
+        "line": 256
+      },
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 212
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Settings",
+        "line": 141
+      },
+      {
+        "type": "button",
+        "label": "Pause",
+        "line": 145
+      },
+      {
+        "type": "button",
+        "label": "ON",
+        "line": 179
+      },
+      {
+        "type": "button",
+        "label": "OFF",
+        "line": 180
+      },
+      {
+        "type": "button",
+        "label": "ON",
+        "line": 186
+      },
+      {
+        "type": "button",
+        "label": "OFF",
+        "line": 187
+      },
+      {
+        "type": "button",
+        "label": "EASY",
+        "line": 202
+      },
+      {
+        "type": "button",
+        "label": "NORMAL",
+        "line": 203
+      },
+      {
+        "type": "button",
+        "label": "HARD",
+        "line": 204
+      },
+      {
+        "type": "button",
+        "label": "RETURN TO GAMEPLAY",
+        "line": 253
+      },
+      {
+        "type": "button",
+        "label": "SAVE PREFERENCES",
+        "line": 256
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "range",
+        "inputType": "range",
+        "line": 212
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 12,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
