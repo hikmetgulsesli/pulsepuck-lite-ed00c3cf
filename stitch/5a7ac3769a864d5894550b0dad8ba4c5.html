@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PulsePuck Lite - Settings</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Design System Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#859397",
+                        "secondary": "#ffafd3",
+                        "tertiary-fixed-dim": "#bdc2ff",
+                        "error": "#ffb4ab",
+                        "surface": "#0b1326",
+                        "secondary-fixed": "#ffd8e7",
+                        "inverse-surface": "#dae2fd",
+                        "primary-container": "#22d3ee",
+                        "surface-container-lowest": "#060e20",
+                        "on-tertiary-fixed-variant": "#2f3aa3",
+                        "outline-variant": "#3c494c",
+                        "on-primary-container": "#005763",
+                        "tertiary": "#d8daff",
+                        "primary": "#8aebff",
+                        "inverse-primary": "#006877",
+                        "secondary-fixed-dim": "#ffafd3",
+                        "on-secondary": "#620040",
+                        "on-secondary-fixed-variant": "#85145a",
+                        "on-surface-variant": "#bbc9cd",
+                        "tertiary-container": "#b6bcff",
+                        "on-secondary-fixed": "#3d0026",
+                        "surface-tint": "#2fd9f4",
+                        "secondary-container": "#85145a",
+                        "surface-container-highest": "#2d3449",
+                        "on-primary-fixed": "#001f25",
+                        "on-surface": "#dae2fd",
+                        "surface-dim": "#0b1326",
+                        "surface-bright": "#31394d",
+                        "on-tertiary-container": "#3842ab",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-container": "#ff93c8",
+                        "on-tertiary-fixed": "#000767",
+                        "on-primary-fixed-variant": "#004e5a",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#e0e0ff",
+                        "surface-container": "#171f33",
+                        "inverse-on-surface": "#283044",
+                        "on-tertiary": "#131e8c",
+                        "surface-container-high": "#222a3d",
+                        "primary-fixed-dim": "#2fd9f4",
+                        "on-background": "#dae2fd",
+                        "surface-variant": "#2d3449",
+                        "surface-container-low": "#131b2e",
+                        "background": "#0b1326",
+                        "on-primary": "#00363e",
+                        "on-error": "#690005",
+                        "primary-fixed": "#a2eeff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-compact": "16px",
+                        "gutter": "12px",
+                        "panel-padding": "12px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "headline-sm": ["Space Grotesk"],
+                        "hud-display": ["Inter"],
+                        "hud-label": ["Inter"],
+                        "headline-lg": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "hud-display": ["20px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "800" }],
+                        "hud-label": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.1", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom styles for range slider to match neon aesthetic */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 12px;
+            background: #2fd9f4; /* surface-tint */
+            border: 1px solid #8aebff; /* primary */
+            box-shadow: 0 0 10px rgba(47, 217, 244, 0.8);
+            cursor: pointer;
+            margin-top: -10px;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #2d3449; /* surface-variant */
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen overflow-hidden antialiased selection:bg-primary/30 selection:text-primary">
+<!-- Blurred Gameplay Background Overlay -->
+<div class="fixed inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&amp;w=2000&amp;auto=format&amp;fit=crop')] bg-cover bg-center" data-alt="A high-contrast, neon-lit digital arena resembling a futuristic arcade game space. Glowing cyan and magenta geometry streaks across a deep abyss-like background. The visual style is retro-futuristic with intense light emission, simulating a high-speed gaming environment caught mid-action. The lighting is dark mode optimized with vibrant luminescent accents."></div>
+<div class="fixed inset-0 z-0 bg-surface/70 backdrop-blur-2xl"></div>
+<!-- TopNavBar (Shared Component Anchor) -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-compact py-unit max-w-full bg-surface/10 backdrop-blur-3xl border-b border-primary/20 shadow-[0_0_15px_rgba(47,217,244,0.3)]">
+<div class="font-headline-sm text-headline-sm font-bold text-primary italic tracking-tighter uppercase">
+            PULSEPUCK LITE
+        </div>
+<div class="flex gap-4 items-center">
+<!-- Active Settings Icon -->
+<button aria-label="Settings" class="active:scale-95 transition-transform hover:bg-primary/10 transition-all duration-200 p-2 rounded-full flex items-center justify-center text-primary font-bold drop-shadow-[0_0_8px_rgba(47,217,244,0.8)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+</button>
+<!-- Inactive Pause Icon -->
+<button aria-label="Pause" class="active:scale-95 transition-transform hover:bg-primary/10 transition-all duration-200 p-2 rounded-full flex items-center justify-center text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">pause</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas: Settings Modal -->
+<main class="relative z-10 flex items-center justify-center min-h-screen pt-20 px-4 pb-10">
+<!-- Cyber-Border Modal Container -->
+<div class="relative w-full max-w-3xl bg-surface-container/40 backdrop-blur-3xl border border-primary/30 p-6 md:p-10 shadow-[0_0_40px_rgba(34,211,238,0.1)] flex flex-col gap-8">
+<!-- Cyber Corners -->
+<div class="absolute -top-[2px] -left-[2px] w-6 h-6 border-t-2 border-l-2 border-secondary shadow-[0_0_10px_rgba(255,175,211,0.5)]"></div>
+<div class="absolute -top-[2px] -right-[2px] w-6 h-6 border-t-2 border-r-2 border-secondary shadow-[0_0_10px_rgba(255,175,211,0.5)]"></div>
+<div class="absolute -bottom-[2px] -left-[2px] w-6 h-6 border-b-2 border-l-2 border-secondary shadow-[0_0_10px_rgba(255,175,211,0.5)]"></div>
+<div class="absolute -bottom-[2px] -right-[2px] w-6 h-6 border-b-2 border-r-2 border-secondary shadow-[0_0_10px_rgba(255,175,211,0.5)]"></div>
+<!-- Header -->
+<header class="flex flex-col gap-1 border-b border-outline/20 pb-4">
+<h1 class="font-headline-md text-headline-md text-primary flex items-center gap-3 uppercase tracking-wide">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1; font-size: 32px;">tune</span>
+                    SYSTEM CONFIG
+                </h1>
+<p class="font-hud-label text-hud-label text-outline uppercase tracking-widest">Override active session parameters</p>
+</header>
+<!-- Settings Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Audio Controls Panel -->
+<section class="bg-surface-container-low/50 border border-outline/20 p-panel-padding flex flex-col gap-6 relative group">
+<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<h2 class="font-hud-label text-hud-label text-secondary uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">volume_up</span> Audio Output
+                    </h2>
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="font-hud-display text-[16px] text-on-surface-variant uppercase">Master FX</span>
+<div class="flex gap-2">
+<button class="px-4 py-1 border border-primary bg-primary/20 text-primary font-hud-label text-hud-label shadow-[0_0_10px_rgba(34,211,238,0.3)] transition-all">ON</button>
+<button class="px-4 py-1 border border-outline/30 text-outline font-hud-label text-hud-label hover:border-outline/60 transition-all">OFF</button>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-hud-display text-[16px] text-on-surface-variant uppercase">Synthesizer</span>
+<div class="flex gap-2">
+<button class="px-4 py-1 border border-primary bg-primary/20 text-primary font-hud-label text-hud-label shadow-[0_0_10px_rgba(34,211,238,0.3)] transition-all">ON</button>
+<button class="px-4 py-1 border border-outline/30 text-outline font-hud-label text-hud-label hover:border-outline/60 transition-all">OFF</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Gameplay Parameters Panel -->
+<section class="bg-surface-container-low/50 border border-outline/20 p-panel-padding flex flex-col gap-6 relative group">
+<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<h2 class="font-hud-label text-hud-label text-secondary uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">speed</span> Parameters
+                    </h2>
+<div class="flex flex-col gap-5">
+<div class="flex flex-col gap-3">
+<span class="font-hud-display text-[16px] text-on-surface-variant uppercase">Simulation Difficulty</span>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2 border border-outline/30 text-outline font-hud-label text-hud-label hover:border-primary/50 transition-all text-center">EASY</button>
+<button class="py-2 border border-secondary bg-secondary/20 text-secondary shadow-[0_0_10px_rgba(255,175,211,0.3)] font-hud-label text-hud-label transition-all text-center">NORMAL</button>
+<button class="py-2 border border-error/50 text-error hover:bg-error/10 font-hud-label text-hud-label transition-all text-center">HARD</button>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<span class="font-hud-display text-[16px] text-on-surface-variant uppercase">Puck Velocity</span>
+<span class="font-hud-label text-primary">1.5x</span>
+</div>
+<input class="w-full mt-2" max="2.5" min="0.5" step="0.1" type="range" value="1.5"/>
+</div>
+</div>
+</section>
+<!-- Input Uplink (Full Width) -->
+<section class="md:col-span-2 bg-surface-container-low/50 border border-outline/20 p-panel-padding flex flex-col gap-4 relative group">
+<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<h2 class="font-hud-label text-hud-label text-secondary uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">keyboard</span> Input Uplink
+                    </h2>
+<div class="flex flex-col md:flex-row items-center justify-center gap-10 py-4">
+<!-- WASD Cluster -->
+<div class="flex flex-col items-center gap-2">
+<div class="flex gap-2">
+<div class="w-12 h-12 flex items-center justify-center border border-primary/40 bg-surface text-primary font-hud-display text-hud-display shadow-[inset_0_0_15px_rgba(34,211,238,0.1)] rounded-DEFAULT">W</div>
+</div>
+<div class="flex gap-2">
+<div class="w-12 h-12 flex items-center justify-center border border-primary/40 bg-surface text-primary font-hud-display text-hud-display shadow-[inset_0_0_15px_rgba(34,211,238,0.1)] rounded-DEFAULT">A</div>
+<div class="w-12 h-12 flex items-center justify-center border border-primary/60 bg-primary/10 text-primary font-hud-display text-hud-display shadow-[inset_0_0_20px_rgba(34,211,238,0.3),0_0_10px_rgba(34,211,238,0.2)] rounded-DEFAULT">S</div>
+<div class="w-12 h-12 flex items-center justify-center border border-primary/40 bg-surface text-primary font-hud-display text-hud-display shadow-[inset_0_0_15px_rgba(34,211,238,0.1)] rounded-DEFAULT">D</div>
+</div>
+<span class="font-hud-label text-[10px] text-outline mt-2 tracking-widest uppercase">Movement Core</span>
+</div>
+<div class="hidden md:block w-[1px] h-16 bg-outline/20"></div>
+<!-- Arrow Cluster -->
+<div class="flex flex-col items-center gap-2 opacity-70">
+<div class="flex gap-2">
+<div class="w-12 h-12 flex items-center justify-center border border-outline/40 bg-surface text-outline font-hud-display text-hud-display rounded-DEFAULT"><span class="material-symbols-outlined">arrow_upward</span></div>
+</div>
+<div class="flex gap-2">
+<div class="w-12 h-12 flex items-center justify-center border border-outline/40 bg-surface text-outline font-hud-display text-hud-display rounded-DEFAULT"><span class="material-symbols-outlined">arrow_back</span></div>
+<div class="w-12 h-12 flex items-center justify-center border border-outline/40 bg-surface text-outline font-hud-display text-hud-display rounded-DEFAULT"><span class="material-symbols-outlined">arrow_downward</span></div>
+<div class="w-12 h-12 flex items-center justify-center border border-outline/40 bg-surface text-outline font-hud-display text-hud-display rounded-DEFAULT"><span class="material-symbols-outlined">arrow_forward</span></div>
+</div>
+<span class="font-hud-label text-[10px] text-outline mt-2 tracking-widest uppercase">Alt Orientation</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Action Footer -->
+<footer class="flex flex-col sm:flex-row justify-end gap-4 mt-2 pt-6 border-t border-primary/20">
+<button class="px-6 py-3 font-hud-label text-hud-label text-outline border border-outline/50 hover:text-secondary hover:border-secondary hover:bg-secondary/5 transition-all uppercase tracking-widest w-full sm:w-auto">
+                    RETURN TO GAMEPLAY
+                </button>
+<button class="px-8 py-3 font-hud-label text-hud-label text-on-primary bg-gradient-to-b from-primary to-surface-tint border border-primary shadow-[0_0_15px_rgba(34,211,238,0.4)] hover:shadow-[0_0_25px_rgba(34,211,238,0.8)] hover:brightness-110 active:scale-95 transition-all uppercase tracking-widest w-full sm:w-auto">
+                    SAVE PREFERENCES
+                </button>
+</footer>
+</div>
+</main>
+</body></html>

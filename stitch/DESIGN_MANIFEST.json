@@ -1,0 +1,24 @@
+[
+  {
+    "screenId": "1568d9d021fb46afa4d0a4b03c5cdbcb",
+    "title": "Gameplay - PulsePuck Lite",
+    "htmlFile": "1568d9d021fb46afa4d0a4b03c5cdbcb.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzI3MTdjNWI2OGM0YzRhNjM4MTNmMjNkMmZlZDZmYzk0EgsSBxCN19Wi9xcYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTg0MDQ1MzAxOTQzMjUzNjc3MA&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/pulsepuck-lite-ed00c3cf/stitch/1568d9d021fb46afa4d0a4b03c5cdbcb.html",
+    "surfaceIds": [
+      "SURF_GAMEPLAY"
+    ]
+  },
+  {
+    "screenId": "5a7ac3769a864d5894550b0dad8ba4c5",
+    "title": "Game Settings - PulsePuck Lite",
+    "htmlFile": "5a7ac3769a864d5894550b0dad8ba4c5.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzgyY2ZkMDRlNWFjNjQ4YzE4ZmQwMGU2NTk1YzZjZGM5EgsSBxCN19Wi9xcYAZIBJAoKcHJvamVjdF9pZBIWQhQxNTg0MDQ1MzAxOTQzMjUzNjc3MA&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/pulsepuck-lite-ed00c3cf/stitch/5a7ac3769a864d5894550b0dad8ba4c5.html",
+    "surfaceIds": [
+      "SURF_GAME_SETTINGS"
+    ]
+  }
+]

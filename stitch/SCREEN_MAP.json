@@ -1,0 +1,20 @@
+[
+  {
+    "screenId": "1568d9d021fb46afa4d0a4b03c5cdbcb",
+    "name": "Gameplay - PulsePuck Lite",
+    "type": "game",
+    "description": "Gameplay - PulsePuck Lite screen",
+    "surfaceIds": [
+      "SURF_GAMEPLAY"
+    ]
+  },
+  {
+    "screenId": "5a7ac3769a864d5894550b0dad8ba4c5",
+    "name": "Game Settings - PulsePuck Lite",
+    "type": "settings",
+    "description": "Game Settings - PulsePuck Lite screen",
+    "surfaceIds": [
+      "SURF_GAME_SETTINGS"
+    ]
+  }
+]
