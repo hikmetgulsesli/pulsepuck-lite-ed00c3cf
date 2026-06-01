@@ -12,6 +12,8 @@ import {
 import { actPauseGame } from './features/surf-gameplay/act_pause_game';
 import { actRestartGame } from './features/surf-gameplay/act_restart_game';
 import { actStartGame } from './features/surf-gameplay/act_start_game';
+import { actReturnToGameplay } from './features/surf-game-settings/act_return_to_gameplay';
+import { actSavePreferences } from './features/surf-game-settings/act_save_preferences';
 import { attachPulsePuckLiteBridge } from './test/bridge';
 
 function usePulsePuckLiteState() {
@@ -45,8 +47,8 @@ function AppScreen({ screen }: { screen: PulsePuckLiteScreen }) {
       'easy-7': () => pulsePuckLiteStore.setDifficulty('easy'),
       'normal-8': () => pulsePuckLiteStore.setDifficulty('normal'),
       'hard-9': () => pulsePuckLiteStore.setDifficulty('hard'),
-      'return-to-gameplay-10': () => pulsePuckLiteStore.navigate('gameplay'),
-      'save-preferences-11': pulsePuckLiteStore.savePreferences,
+      'return-to-gameplay-10': actReturnToGameplay,
+      'save-preferences-11': actSavePreferences,
     }),
     [],
   );
@@ -109,7 +111,7 @@ export default function App() {
   }, [screen.activeScreen, screen.gameOver, screen.runtime.paused, screen.started]);
 
   return (
-    <div className="min-h-dvh flex" data-setfarm-root="pulsepuck-lite" data-testid="setfarm-app-root">
+    <div data-setfarm-root="pulsepuck-lite" data-testid="setfarm-app-root">
       <AppScreen screen={screen} />
     </div>
   );

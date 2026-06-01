@@ -7,6 +7,7 @@
 // 3. Wire interactive controls through the typed actions prop
 // 4. Replace placeholder data with props/state
 
+import { useState } from "react";
 import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Gauge, Keyboard, Pause, Settings, SlidersHorizontal, Volume2 } from "lucide-react";
 
 
@@ -18,6 +19,9 @@ export interface GameSettingsPulsepuckLiteProps {
 }
 
 export function GameSettingsPulsepuckLite({ actions }: GameSettingsPulsepuckLiteProps) {
+  const [puckVelocity, setPuckVelocity] = useState("1.5");
+  const isPuckVelocityValid = Number(puckVelocity) >= 0.5 && Number(puckVelocity) <= 2.5;
+
   return (
     <>
       {/* Blurred Gameplay Background Overlay */}
@@ -99,9 +103,9 @@ export function GameSettingsPulsepuckLite({ actions }: GameSettingsPulsepuckLite
       <div className="flex flex-col gap-2">
       <div className="flex justify-between items-end">
       <span className="font-hud-display text-[16px] text-on-surface-variant uppercase">Puck Velocity</span>
-      <span className="font-hud-label text-primary">1.5x</span>
+      <span className="font-hud-label text-primary">{puckVelocity}x</span>
       </div>
-      <input className="w-full mt-2" max="2.5" min="0.5" step="0.1" type="range" defaultValue="1.5" />
+      <input aria-invalid={!isPuckVelocityValid} aria-valuetext={`${puckVelocity}x`} className="w-full mt-2" max="2.5" min="0.5" step="0.1" type="range" value={puckVelocity} onChange={(event) => setPuckVelocity(event.currentTarget.value)} />
       </div>
       </div>
       </section>
@@ -145,7 +149,11 @@ export function GameSettingsPulsepuckLite({ actions }: GameSettingsPulsepuckLite
       <button className="px-6 py-3 font-hud-label text-hud-label text-outline border border-outline/50 hover:text-secondary hover:border-secondary hover:bg-secondary/5 transition-colors uppercase tracking-widest w-full sm:w-auto" type="button" data-action-id="return-to-gameplay-10" onClick={actions?.["return-to-gameplay-10"]}>
                           RETURN TO GAMEPLAY
                       </button>
-      <button className="px-8 py-3 font-hud-label text-hud-label text-on-primary bg-gradient-to-b from-primary to-surface-tint border border-primary shadow-[0_0_15px_rgba(34,211,238,0.4)] hover:shadow-[0_0_25px_rgba(34,211,238,0.8)] hover:brightness-110 active:scale-95 transition-colors uppercase tracking-widest w-full sm:w-auto" type="button" data-action-id="save-preferences-11" onClick={actions?.["save-preferences-11"]}>
+      <button className="px-8 py-3 font-hud-label text-hud-label text-on-primary bg-gradient-to-b from-primary to-surface-tint border border-primary shadow-[0_0_15px_rgba(34,211,238,0.4)] hover:shadow-[0_0_25px_rgba(34,211,238,0.8)] hover:brightness-110 active:scale-95 transition-colors uppercase tracking-widest w-full sm:w-auto" type="button" data-action-id="save-preferences-11" onClick={() => {
+        if (isPuckVelocityValid) {
+          actions?.["save-preferences-11"]?.();
+        }
+      }}>
                           SAVE PREFERENCES
                       </button>
       </footer>
