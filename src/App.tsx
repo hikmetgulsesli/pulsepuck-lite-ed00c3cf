@@ -60,6 +60,51 @@ export default function App() {
 
   useEffect(() => attachPulsePuckLiteBridge(pulsePuckLiteStore), []);
 
+  useEffect(() => {
+    const tickId = window.setInterval(() => {
+      pulsePuckLiteStore.tick();
+    }, 600);
+
+    return () => window.clearInterval(tickId);
+  }, []);
+
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      if (screen.activeScreen !== 'gameplay') {
+        return;
+      }
+
+      if (event.key === 'ArrowLeft' || event.key.toLowerCase() === 'a') {
+        event.preventDefault();
+        pulsePuckLiteStore.movePlayer(-1);
+      }
+
+      if (event.key === 'ArrowRight' || event.key.toLowerCase() === 'd') {
+        event.preventDefault();
+        pulsePuckLiteStore.movePlayer(1);
+      }
+
+      if (event.key === ' ' || event.key === 'Enter') {
+        event.preventDefault();
+        if (!screen.started || screen.gameOver) {
+          pulsePuckLiteStore.start();
+        } else if (screen.runtime.paused) {
+          pulsePuckLiteStore.resume();
+        } else {
+          pulsePuckLiteStore.pause();
+        }
+      }
+
+      if (event.key.toLowerCase() === 'r') {
+        event.preventDefault();
+        pulsePuckLiteStore.restart();
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [screen.activeScreen, screen.gameOver, screen.runtime.paused, screen.started]);
+
   return (
     <div data-setfarm-root="pulsepuck-lite" data-testid="setfarm-app-root">
       <AppScreen screen={screen} />

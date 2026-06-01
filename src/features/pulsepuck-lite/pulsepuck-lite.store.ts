@@ -1,6 +1,7 @@
 import {
   advancePulsePuckLiteRuntime,
   createPulsePuckLiteRuntime,
+  movePulsePuckLitePlayer,
   type PulsePuckLiteDifficulty,
   type PulsePuckLiteRuntime,
 } from '../../game/game-runtime';
@@ -32,6 +33,7 @@ export interface PulsePuckLiteStore {
   resume(): void;
   restart(): void;
   tick(): void;
+  movePlayer(laneDelta: number): void;
   setDifficulty(difficulty: PulsePuckLiteDifficulty): void;
   setSoundEnabled(enabled: boolean): void;
   setHapticsEnabled(enabled: boolean): void;
@@ -149,6 +151,10 @@ export const pulsePuckLiteStore: PulsePuckLiteStore = {
       gameOver,
       ...(persistence ?? {}),
     });
+  },
+
+  movePlayer(laneDelta) {
+    setState({ ...state, runtime: movePulsePuckLitePlayer(state.runtime, laneDelta) });
   },
 
   setDifficulty(difficulty) {

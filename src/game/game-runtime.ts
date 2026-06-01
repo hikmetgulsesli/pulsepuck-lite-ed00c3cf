@@ -80,3 +80,17 @@ export function advancePulsePuckLiteRuntime(
     })),
   };
 }
+
+export function movePulsePuckLitePlayer(runtime: PulsePuckLiteRuntime, laneDelta: number): PulsePuckLiteRuntime {
+  if (runtime.paused || runtime.lives <= 0 || laneDelta === 0) {
+    return runtime;
+  }
+
+  return {
+    ...runtime,
+    player: {
+      ...runtime.player,
+      lane: Math.max(0, Math.min(2, runtime.player.lane + laneDelta)),
+    },
+  };
+}

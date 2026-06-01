@@ -10,6 +10,7 @@ export interface PulsePuckLiteTestBridge {
     resume(): void;
     restart(): void;
     tick(): void;
+    movePlayer(laneDelta: number): void;
     setDifficulty(difficulty: PulsePuckLiteDifficulty): void;
     setSoundEnabled(enabled: boolean): void;
     setHapticsEnabled(enabled: boolean): void;
@@ -37,6 +38,7 @@ export function attachPulsePuckLiteBridge(store: PulsePuckLiteStore) {
       resume: store.resume,
       restart: store.restart,
       tick: store.tick,
+      movePlayer: store.movePlayer,
       setDifficulty: store.setDifficulty,
       setSoundEnabled: store.setSoundEnabled,
       setHapticsEnabled: store.setHapticsEnabled,
