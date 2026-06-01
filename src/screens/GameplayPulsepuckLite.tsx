@@ -44,7 +44,7 @@ export function GameplayPulsepuckLite({ actions, runtime }: GameplayPulsepuckLit
       {/* Background Grid */}
       <div className="absolute inset-0 grid-bg opacity-30 z-0"></div>
       {/* HUD: Corner Anchors */}
-      <div className="absolute top-margin-compact left-margin-compact z-20 flex gap-gutter">
+      <div className="absolute top-margin-compact left-margin-compact z-20 flex gap-gutter" style={{ top: "var(--spacing-margin-compact)", left: "var(--spacing-margin-compact)" }}>
       <div className="hud-panel px-panel-padding py-2 rounded">
       <p className="font-hud-label text-hud-label text-outline uppercase">SCORE</p>
       <p className="font-hud-display text-hud-display text-primary neon-text-primary">{formatScore(score)}</p>
@@ -58,7 +58,7 @@ export function GameplayPulsepuckLite({ actions, runtime }: GameplayPulsepuckLit
       <p className="font-hud-display text-hud-display text-tertiary neon-text-primary">{lives}</p>
       </div>
       </div>
-      <div className="absolute top-margin-compact right-margin-compact z-20 flex gap-gutter">
+      <div className="absolute top-margin-compact right-margin-compact z-20 flex gap-gutter" style={{ top: "var(--spacing-margin-compact)", right: "var(--spacing-margin-compact)" }}>
       <button className="hud-panel px-panel-padding py-2 rounded flex items-center gap-2 hover:bg-white/10 transition-colors" aria-label="Pause Game [P]" title="Pause Game [P]" type="button" data-action-id="pause-game-p-1" onClick={actions?.["pause-game-p-1"]}>
       <Pause className="text-outline" aria-hidden={true} focusable="false" />
       </button>
@@ -106,7 +106,7 @@ export function GameplayPulsepuckLite({ actions, runtime }: GameplayPulsepuckLit
       ></div>
       </div>
       {/* Start/Restart Controls Overlay (Optional state demonstration) */}
-      <div className={`absolute bottom-margin-compact left-1/2 -translate-x-1/2 z-20 flex gap-gutter ${paused ? "" : "hidden"}`}>
+      <div className={`absolute bottom-margin-compact left-1/2 -translate-x-1/2 z-20 flex gap-gutter ${paused ? "" : "hidden"}`} style={{ bottom: "var(--spacing-margin-compact)" }}>
       {isOpeningState ? (
       <button className="game-btn px-8 py-3 rounded neon-border text-primary font-hud-label text-hud-label uppercase tracking-widest bg-surface-container/80 backdrop-blur-sm" type="button" data-action-id="start-game-3" onClick={actions?.["start-game-3"]}>
                       START GAME
